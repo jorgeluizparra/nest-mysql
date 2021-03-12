@@ -8,8 +8,8 @@ import { AppService } from './app.service';
 import { ProductModule } from './products/product.module';
 import { Product } from './products/product.entity';
 
-import { SupplierModule } from './suppliers/supplier.module';
-import { Supplier } from './suppliers/supplier.entity';
+// import { SupplierModule } from './suppliers/supplier.module';
+// import { Supplier } from './suppliers/supplier.entity';
 
 
 @Module({
@@ -23,12 +23,12 @@ import { Supplier } from './suppliers/supplier.entity';
       database: 'stock_manager',
       entities: [
         Product,
-        Supplier
+        // Supplier
       ],
       synchronize: true,
     }),
     ProductModule,
-    SupplierModule,
+    // SupplierModule,
   ],
   controllers: [
     AppController

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 import { Product } from '../products/product.entity';
 
@@ -14,6 +14,6 @@ export class Supplier {
     @Column({ default: true })
     isActive: Boolean;
 
-    @ManyToMany(type => Product, product => product.suppliers)
-    products: Product[];
+    // @OneToMany(type => Product, product => product.supplierId)
+    // products: Product[];
 }
