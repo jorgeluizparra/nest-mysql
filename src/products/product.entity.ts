@@ -1,19 +1,18 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
-import { Supplier } from '../suppliers/supplier.entity';
+// import { Supplier } from '../suppliers/supplier.entity';
 
 @Entity()
 export class Product {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ unique: true })
     name: String;
 
     @Column({ default: true })
     isActive: Boolean;
 
-    @ManyToMany(type => Supplier, supplier => supplier.products)
-    @JoinTable()
-    suppliers: Supplier[];
+    // @ManyToOne(type => Supplier, supplier => supplier.products)
+    // supplierId: Supplier;
 }
